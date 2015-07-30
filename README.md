@@ -15,7 +15,7 @@ Authors: Phi Van Thuy and Taishi Ikeda
 			script for creating flare-format data (require 'gensim' to excute)
 	+ frontend<br>
 		+ data<br>
-			contain all data for searching word and vizualize them: "out.json" is the database, and "tree.json" si the flare-format data for vizualize words on the web page
+			contain all data for searching word and vizualize them: "out.json" is the database, and "tree.json" is the flare-format data for vizualize words on the web page
 		+ js<br>
 			contain D3.js library (visualization javascript library)
 		+ word2vec_tree.html<br>
