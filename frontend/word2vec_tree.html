@@ -48,13 +48,202 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("data/tree.json", function(error, flare) {
+
+function createFlare(word, topn, data) {
+    
+  /*flare = {
+"name": "student",
+"children": [
+{"name": "graduate"},
+{"name": "hosei"},
+{"name": "daigaku"},
+{"name": "college"},
+{"name": "rikkyo"},
+{"name": "graduated"},
+{"name": "doctorate"},
+{"name": "cambridge"},
+{"name": "sophia"},
+{"name": "doctoral"}
+]
+};*/
+
+  topn = topn;
+
+  flare = "{";
+
+  word = word;
+
+  // Check whether word is in list?
+  if (!(word in data)) {
+    console.log("Word Not Found!");
+    return 0;
+  }
+
+  flare += "\"name\": \"" + word + "\",";
+  flare += "\"children\": [";
+
+  nearest_words = data[word];
+
+  for (i = 0; i < topn; i++) {
+    flare += "{";
+
+    flare += "\"name\": \"" + nearest_words[i]["w"] + "\","; //Before loop 1
+
+    // Loop 1
+    flare += "\"children\": [";
+
+    nearest_words_1 = data[nearest_words[i]["w"]];
+
+    for (i1 = 0; i1 < topn; i1++) {
+      flare += "{";
+
+      flare += "\"name\": \"" + nearest_words_1[i1]["w"] + "\","; //Before loop 2
+
+      // Loop 2
+      flare += "\"children\": [";
+
+      nearest_words_2 = data[nearest_words_1[i1]["w"]];
+
+      for (i2 = 0; i2 < topn; i2++) {
+        flare += "{";
+
+        flare += "\"name\": \"" + nearest_words_2[i2]["w"] + "\","; //Before loop 3
+
+        // Loop 3
+        flare += "\"children\": [";
+
+        nearest_words_3 = data[nearest_words_2[i2]["w"]];
+
+        for (i3 = 0; i3 < topn; i3++) {
+          flare += "{";
+
+          flare += "\"name\": \"" + nearest_words_3[i3]["w"] + "\","; //Before loop 4
+
+          // Loop 4
+          flare += "\"children\": [";
+
+          nearest_words_4 = data[nearest_words_3[i3]["w"]];
+
+          for (i4 = 0; i4 < topn; i4++) {
+            flare += "{";
+
+            flare += "\"name\": \"" + nearest_words_4[i4]["w"] + "\""; //Before loop ?
+            // If this is the final layer --> modify (delete ",")
+            if (i4 != (topn - 1)) {
+              flare += "},";
+            }
+            else {
+              flare += "}";
+            }
+          }
+          flare += "]";
+          // End Loop 3
+
+          if (i3 != (topn - 1)) {
+            flare += "},";
+          }
+          else {
+            flare += "}";
+          }
+        }
+        flare += "]";
+        // End Loop 3
+
+        if (i2 != (topn - 1)) {
+          flare += "},";
+        }
+        else {
+          flare += "}";
+        }
+      }
+      flare += "]";
+      // End Loop 2
+
+      if (i1 != (topn - 1)) {
+        flare += "},";
+      }
+      else {
+        flare += "}";
+      }
+    }
+    flare += "]";
+    // End Loop 1
+
+    if (i != (topn - 1)) {
+      flare += "},";
+    }
+    else {
+      flare += "}";
+    }
+
+  }
+
+  flare += "]";
+
+  flare += "}";
+
+  //return topn;
+  //console.log(flare);
+  //console.log(typeof flare);
+
+  //alert(flare);
+
+  /*var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';*/
+
+/*var flare2 = {
+
+"name": "student",
+"children": [
+{"name": "college",
+"children": [
+{"name": "university",
+"children": [
+{"name": "graduate",
+"children": [
+{"name": "university",
+"children": [
+{"name": "graduate"}
+]
+}
+]
+}
+]
+}
+]
+}
+]
+
+};*/
+
+  //console.log(typeof flare2);
+  //console.log(flare);
+  return JSON.parse(flare);
+}
+
+word = "student";
+topn = 10;
+
+d3.json("data/out.json", function(error, json) {
   if (error) throw error;
 
-  //console.log(flare)
+  json_data = json;
+  //console.log(json_data);
   //console.log(flare.children[0].children[0].children[0])
 
-  root = flare;
+  //root = flare;
+
+  root = createFlare(word, topn, json_data);
+  //console.log(root);
+
+  // Word Not Found
+  if (root == 0) {
+    alert("Word Not Found!");
+    return;
+  }
+
   root.x0 = height / 2;
   root.y0 = 0;
 
