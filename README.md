@@ -1,9 +1,7 @@
 # word2vec-visualization
 Word vectors visualization
 
-Authors:
-- Phi Van Thuy
-- Taishi Ikeda
+Authors: Phi Van Thuy and Taishi Ikeda
 
 - Run server: python -m SimpleHTTPServer 8888
 
