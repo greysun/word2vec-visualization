@@ -182,44 +182,6 @@ function createFlare(word, topn, data) {
 
   flare += "}";
 
-  //return topn;
-  //console.log(flare);
-  //console.log(typeof flare);
-
-  //alert(flare);
-
-  /*var text = '{ "employees" : [' +
-'{ "firstName":"John" , "lastName":"Doe" },' +
-'{ "firstName":"Anna" , "lastName":"Smith" },' +
-'{ "firstName":"Peter" , "lastName":"Jones" } ]}';*/
-
-/*var flare2 = {
-
-"name": "student",
-"children": [
-{"name": "college",
-"children": [
-{"name": "university",
-"children": [
-{"name": "graduate",
-"children": [
-{"name": "university",
-"children": [
-{"name": "graduate"}
-]
-}
-]
-}
-]
-}
-]
-}
-]
-
-};*/
-
-  //console.log(typeof flare2);
-  //console.log(flare);
   return JSON.parse(flare);
 }
 
@@ -230,13 +192,8 @@ d3.json("data/out.json", function(error, json) {
   if (error) throw error;
 
   json_data = json;
-  //console.log(json_data);
-  //console.log(flare.children[0].children[0].children[0])
-
-  //root = flare;
 
   root = createFlare(word, topn, json_data);
-  //console.log(root);
 
   // Word Not Found
   if (root == 0) {
