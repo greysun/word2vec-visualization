@@ -24,7 +24,6 @@
 
 </style>
 <body>
-  Fix when re-entering word (NOT YET)
 Enter word <input type="text" id = "word" class="search" size="15" value = "student"/> <br>
 
 <!--<input type="numer" id = "topn3" value = "10" onkeypress="return isNumericKey(event)" maxlength="2" min="0" max="20"/> <br>-->
@@ -55,13 +54,11 @@ Select number of similar words <select id = "topn">
 Select distance metric (NOT YET) <select id = "topn">
   <option value="Cosine distance" SELECTED>Cosine distance</option>
   <option value="Euclidean distance">Euclidean distance</option>
-</select> <br>
+</select>
 
 <!--<input type="number" id = "topn2" value = "10" onkeypress="return isNumericKey(event)" maxlength="2" min="0" max="20">-->
 
-<button onclick="submit()">Vizualize it!</button>
-<p id="submit"></p>
-
+<button id = "submit">Vizualize it!</button>
 
 <script src="js/d3.js"></script>
 <script>
@@ -96,7 +93,9 @@ var svg = d3.select("body").append("svg")
     return true;
 }*/
 
-function submit() {
+document.getElementById("submit").onclick = function() {
+    //d3.select("svg").remove();
+    svg.selectAll("*").remove();
     var word = document.getElementById("word").value;
     var topn = document.getElementById("topn").value;
     //console.log(word);
@@ -252,7 +251,10 @@ function visualize(word, topn) {
   word = word;
   topn = topn;
 
+  //console.log(word);
+
   d3.json("data/out.json", function(error, json) {
+    //console.log("JSON file is loaded!");
     if (error) throw error;
 
     json_data = json;
@@ -278,6 +280,7 @@ function visualize(word, topn) {
 
     root.children.forEach(collapse);
     update(root);
+
   });
 
   d3.select(self.frameElement).style("height", "800px");
