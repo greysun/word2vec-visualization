@@ -94,15 +94,12 @@ var svg = d3.select("body").append("svg")
 }*/
 
 document.getElementById("submit").onclick = function() {
-    //d3.select("svg").remove();
     svg.selectAll("*").remove();
     var word = document.getElementById("word").value;
     var topn = document.getElementById("topn").value;
     //console.log(word);
     if (word == "")
       alert("Please enter a word!");
-    //else if (topn == "")
-      //alert("Please enter number of similar words!");
     else
       visualize(word, topn);
       
@@ -251,10 +248,7 @@ function visualize(word, topn) {
   word = word;
   topn = topn;
 
-  //console.log(word);
-
   d3.json("data/out.json", function(error, json) {
-    //console.log("JSON file is loaded!");
     if (error) throw error;
 
     json_data = json;
