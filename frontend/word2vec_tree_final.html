@@ -51,7 +51,7 @@ Select number of similar words <select id = "topn">
   <option value="20">20</option>
 </select> <br>
 
-Select distance metric (NOT YET) <select id = "topn">
+Select distance metric <select id = "metric">
   <option value="Cosine distance" SELECTED>Cosine distance</option>
   <option value="Euclidean distance">Euclidean distance</option>
 </select>
@@ -248,7 +248,12 @@ function visualize(word, topn) {
   word = word;
   topn = topn;
 
-  d3.json("data/out.json", function(error, json) {
+  if (document.getElementById("metric").value == "Cosine distance")
+    data_file = "data/data_cosine.json";
+  else
+    data_file = "data/data_euclidean.json";
+
+  d3.json(data_file, function(error, json) {
     if (error) throw error;
 
     json_data = json;
