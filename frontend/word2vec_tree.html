@@ -188,7 +188,7 @@ function createFlare(word, topn, data) {
 word = "student";
 topn = 10;
 
-d3.json("data/out.json", function(error, json) {
+d3.json("data/data_cosine.json", function(error, json) {
   if (error) throw error;
 
   json_data = json;
