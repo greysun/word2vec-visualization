@@ -1,5 +1,25 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+
+
+<head>
+  <meta charset="utf-8">
+  <title>Word Vectors Vizualization</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Loading Bootstrap -->
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Loading Flat UI -->
+  <link href="css/flat-ui.css" rel="stylesheet">
+  <link href="css/demo.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+
+  <link rel="shortcut icon" href="images/favicon.ico">
+
+</head>
+
+
 <style>
 
 .node {
@@ -24,39 +44,71 @@
 
 </style>
 <body>
-Enter word <input type="text" id = "word" class="search" size="15" value = "student" onkeydown="if (event.keyCode == 13) document.getElementById('submit').click()"/>  <button id = "submit">Enter or click here to vizualize!</button> <br>
+  <br>
+  <h3 align="center">Word Vectors Vizualization</h3>
+  <h4 align="center">In Tree Form</h4>
 
-<!--<input type="numer" id = "topn3" value = "10" onkeypress="return isNumericKey(event)" maxlength="2" min="0" max="20"/> <br>-->
+  <div class="container" align="center">
+    <div class="demo-headline">
+        
+    </div> <!-- /demo-headline -->
 
-Select number of similar words <select id = "topn">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-  <option value="10" SELECTED>10</option>
-  <option value="11">11</option>
-  <option value="12">12</option>
-  <option value="13">13</option>
-  <option value="14">14</option>
-  <option value="15">15</option>
-  <option value="16">16</option>
-  <option value="17">17</option>
-  <option value="18">18</option>
-  <option value="19">19</option>
-  <option value="20">20</option>
-</select> <br>
+    <div class="row">
+      <div class="col-md-1">
+          
+      </div>
+        <div class="col-md-5">
+          <input type="text" id = "word" value="" placeholder="Input a word to get its nearest words" class="form-control" onkeydown="if (event.keyCode == 13) document.getElementById('submit').click()"/>
+      </div>
+       <div class="col-md-2">
+          <a id = "submit" class="btn btn-block btn-lg btn-primary"><span class="fui-search"></span></a>
+      </div>
+    </div> <!-- /row -->
 
-Select distance metric <select id = "metric">
-  <option value="Cosine distance" SELECTED>Cosine distance</option>
-  <option value="Euclidean distance">Euclidean distance</option>
-</select>
+    <div class="row">
+    <br>
+    </div>
+        <div class="col-md-5">
 
-<!--<input type="number" id = "topn2" value = "10" onkeypress="return isNumericKey(event)" maxlength="2" min="0" max="20">-->
+    Select number of similar words <select id = "topn">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10" SELECTED>10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+    </select>
+
+    </div>
+      <div class="col-md-5">
+      Select distance metric <select id = "metric">
+        <option value="Cosine distance" SELECTED>Cosine distance</option>
+        <option value="Euclidean distance">Euclidean distance</option>
+      </select>
+
+    </div>
+
+    </div> <!-- /row -->   
+
+  </div> <!-- /container -->
+
+
+<!-- Enter word <input type="text" id = "word" class="search" size="15" value = "student" onkeydown="if (event.keyCode == 13) document.getElementById('submit').click()"/>  <button id = "submit">Enter or click here to vizualize!</button> <br> -->
+
 
 <script src="js/d3.js"></script>
 <script>
@@ -375,3 +427,17 @@ function click(d) {
 }
 
 </script>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          
+          <p>copyright @ 2015
+          </p>
+
+        </div> <!-- /col-md-7 -->
+
+          
+    </div>
+  </footer>
