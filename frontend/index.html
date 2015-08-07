@@ -57,8 +57,8 @@
       <div class="col-md-1">
           
       </div>
-        <div class="col-md-5">
-          <input type="text" id = "word" value="" placeholder="Input a word to get its nearest words" class="form-control" onkeydown="if (event.keyCode == 13) document.getElementById('submit').click()"/>
+        <div class="col-md-6">
+          <input type="text" id = "word" value="" placeholder="Enter a word to get its nearest words" class="form-control" onkeydown="if (event.keyCode == 13) document.getElementById('submit').click()"/>
       </div>
        <div class="col-md-2">
           <a id = "submit" class="btn btn-block btn-lg btn-primary"><span class="fui-search"></span></a>
@@ -68,9 +68,9 @@
     <div class="row">
     <br>
     </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
 
-    Select number of similar words <select id = "topn">
+    Number of similar words <select id = "topn">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -94,15 +94,52 @@
     </select>
 
     </div>
-      <div class="col-md-5">
-      Select distance metric <select id = "metric">
-        <option value="Cosine distance" SELECTED>Cosine distance</option>
-        <option value="Euclidean distance">Euclidean distance</option>
+      <div class="col-md-4">
+      Distance metric  <select id = "metric">
+        <option value="Cosine" SELECTED>Cosine</option>
+        <option value="Euclidean">Euclidean</option>
+      </select>
+    </div>
+
+
+
+    </div> <!-- /row -->   
+
+
+
+
+
+  </div> <!-- /container -->
+
+  <div class="container" align="center">
+    <div class="demo-headline">
+        
+    </div> <!-- /demo-headline -->
+
+    <div class="row">
+    </div>
+        <div class="col-md-4">
+
+      Type of model <select id = "model">
+        <option value="Skipgram" SELECTED>Skip-gram</option>
+        <option value="Cbow">Cbow</option>
       </select>
 
     </div>
+      <div class="col-md-4">
+        <form id = "language">
+        Data&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="language" value="English" checked="checked"> English&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="language" value="Japanese"> Japanese
+        </form>
+    </div>
+
+
 
     </div> <!-- /row -->   
+
+    
+
+
 
   </div> <!-- /container -->
 
@@ -290,10 +327,34 @@ function visualize(word, topn) {
   word = word;
   topn = topn;
 
-  if (document.getElementById("metric").value == "Cosine distance")
-    data_file = "data/data_cosine.json";
-  else
-    data_file = "data/data_euclidean.json";
+  if (document.getElementById("language").elements["language"].value == "English") {
+    if (document.getElementById("metric").value == "Cosine") {
+      if (document.getElementById("model").value == "Skipgram")
+        data_file = "data/en_data_cosine_skipgram.json";
+      else
+        data_file = "data/en_data_cosine_cbow.json";
+    }
+    else {
+      if (document.getElementById("model").value == "Skipgram")
+        data_file = "data/en_data_euclidean_skipgram.json";
+      else
+        data_file = "data/en_data_euclidean_cbow.json";
+    }
+  }
+  else {
+    if (document.getElementById("metric").value == "Cosine") {
+      if (document.getElementById("model").value == "Skipgram")
+        data_file = "data/ja_data_cosine_skipgram.json";
+      else
+        data_file = "data/ja_data_cosine_cbow.json";
+    }
+    else {
+      if (document.getElementById("model").value == "Skipgram")
+        data_file = "data/ja_data_euclidean_skipgram.json";
+      else
+        data_file = "data/ja_data_euclidean_cbow.json";
+    }
+  }
 
   d3.json(data_file, function(error, json) {
     if (error) throw error;
@@ -433,7 +494,8 @@ function click(d) {
       <div class="row">
         <div class="col-md-12">
           
-          <p>copyright @ 2015
+          <p>@2015 Phi Van Thuy and Taishi Ikeda.
+            <br>Models are trained on HiraganaTimes data.
           </p>
 
         </div> <!-- /col-md-7 -->
