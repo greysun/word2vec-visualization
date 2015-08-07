@@ -1,6 +1,0 @@
-These special character is deleted from "out.json" file:
-(For example, delete all character "\": replace all "\" by "")
-
-\
-"
-'
