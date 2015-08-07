@@ -4,7 +4,7 @@ Word Vectors Visualization in Tree Form
 Authors: Phi Van Thuy and Taishi Ikeda
 
 - Two types of distances: Cosine distance and Euclidean distance
-- There are totally 8 different models for the English and the Japanese data
+- Totally 8 different models for the English and the Japanese data
 - Run server: python -m SimpleHTTPServer 8888
 
 - Main files and folders:
