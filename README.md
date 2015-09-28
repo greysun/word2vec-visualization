@@ -5,7 +5,7 @@ Authors: Phi Van Thuy and Taishi Ikeda
 
 - Two types of distances: Cosine distance and Euclidean distance
 - Totally 8 different models for the English and the Japanese data
-- Run server: python -m SimpleHTTPServer 8888
+- Run simple HTTP server: python -m SimpleHTTPServer 8888
 
 - Main files and folders:
 	+ backend<br>
@@ -21,4 +21,5 @@ Authors: Phi Van Thuy and Taishi Ikeda
 		+ word2vec_tree_final.html<br>
 			the main web page
 
-
+- Convert the word2vec models to the JSON files
+To visualize your own data, 
