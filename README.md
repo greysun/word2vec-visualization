@@ -28,3 +28,4 @@ Authors: Phi Van Thuy and Taishi Ikeda.
 	Quick install Gensim: "easy_install -U gensim" or, alternatively: "pip install --upgrade gensim".
 	+ For Cosine distance metric: use script "create_database_cosine.py".
 	+ For Euclidean distance metric: use script "create_database_euclidean.py", and copy the file "word2vec.py" to Gensim library's location, e.g., "/Library/Python/2.7/site-packages/gensim-0.10.3-py2.7-macosx-10.10-intel.egg/gensim/models". In this new implementation, the new method most_similar_euclidean() is included to calculate the distance between pairs of words/phrases by Euclidean metric.
+	+ Special characters should be excluded from JSON files to generate the correct JSON format. More details are in "Remove_Special_Characters.txt" file.
