@@ -22,4 +22,8 @@ Authors: Phi Van Thuy and Taishi Ikeda
 			the main web page
 
 - Convert the word2vec models to the JSON files
-To visualize your own data, 
+	To visualize your own data, the GENSIM library (https://radimrehurek.com/gensim/install.html) is required.
+	Quick install: Run in your terminal:
+		easy_install -U gensim
+		or, alternatively:
+		pip install --upgrade gensim
