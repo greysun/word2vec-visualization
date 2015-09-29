@@ -2,6 +2,7 @@
 Word Vectors Visualization in Tree Form
 
 Authors: Phi Van Thuy and Taishi Ikeda.
+
 Supervisor: Assistant Professor Kevin Duh.
 
 - Two types of distances: Cosine distance and Euclidean distance.
