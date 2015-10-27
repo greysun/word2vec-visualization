@@ -10,6 +10,8 @@ Supervisor: Assistant Professor Kevin Duh.
 - Run simple HTTP server: "python -m SimpleHTTPServer 8888".
 
 ![fig1] (demo_en.png)
+
+
 ![fig2] (demo_ja.png)
 
 - Main files and folders:
