@@ -1,5 +1,5 @@
 #Author: Phi Van Thuy
-#Purpose: Convert wors2vec models to JSON database by cosine distance metric
+#Purpose: Convert word2vec models to JSON database by cosine distance metric
 
 from gensim.models import word2vec
 
