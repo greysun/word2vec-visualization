@@ -1,4 +1,3 @@
-#Author: Phi Van thuy
 #Purpose: add most_similar_euclidean() method
 #Usage: Copy this file to: /Library/Python/2.7/site-packages/gensim-0.10.3-py2.7-macosx-10.10-intel.egg/gensim/models
 #!/usr/bin/env python
@@ -677,6 +676,7 @@ class Word2Vec(utils.SaveLoad):
         return result[:topn]
 
     def most_similar_euclidean(self, positive=[], negative=[], topn=10):
+        #Author: Phi Van thuy
         #For Euclidean distance
         self.init_sims()
 
