@@ -1,7 +1,7 @@
 # word2vec-visualization
 Word Vectors Visualization in Tree Form
 
-Authors: Phi Van Thuy and Taishi Ikeda.
+Authors: Van-Thuy Phi and Taishi Ikeda.
 
 Supervisor: Assistant Professor Kevin Duh.
 
