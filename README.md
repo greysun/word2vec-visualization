@@ -9,9 +9,9 @@ Supervisor: Kevin Duh.
 - Totally 8 different models for the English and the Japanese data.
 - Run simple HTTP server: "python -m SimpleHTTPServer 8888".
 
-[fig1] (demo_en.png)
+![fig1] (demo_en.png)
 <br><br><br><br>
-[fig2] (demo_ja.png)
+![fig2] (demo_ja.png)
 
 - Main files and folders:
 	+ backend<br>
