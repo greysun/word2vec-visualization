@@ -9,8 +9,7 @@ Supervisor: Kevin Duh.
 - Totally 8 different models for the English and the Japanese data.
 - Run simple HTTP server: "python -m SimpleHTTPServer 8888".
 
-![fig1] (https://github.com/pvthuy/word2vec-visualization/blob/master/demo_en.png)
-![alt text](demo_en.pngg)
+![alt text](demo_en.png)
 
 ![fig2] (demo_ja.png?raw=true)
 
