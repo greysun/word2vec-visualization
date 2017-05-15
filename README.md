@@ -10,6 +10,7 @@ Supervisor: Kevin Duh.
 - Run simple HTTP server: "python -m SimpleHTTPServer 8888".
 
 ![fig1] (https://github.com/pvthuy/word2vec-visualization/blob/master/demo_en.png)
+
 ![fig2] (demo_ja.png?raw=true)
 
 - Main files and folders:
