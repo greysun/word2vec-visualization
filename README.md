@@ -8,16 +8,17 @@ Supervisor: Kevin Duh.
 - Two types of distances: Cosine distance / Euclidean distance.
 - Totally 8 different models for English and Japanese data.
 - To run simple HTTP server: "python -m SimpleHTTPServer 8888".
-
+<br>
 
 
 ![alt text](demo_en.png)
 
-
+<br>
+<br>
 
 ![alt text](demo_ja.png)
 
-
+<br>
 
 - Main files and folders:
 	+ backend<br>
