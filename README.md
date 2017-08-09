@@ -1,4 +1,4 @@
-# word2vec-visualization
+# word2vec-visualization (Python 3 / Gensim 2.3.0 Compatible)
 Word Vectors Visualization in Tree Form
 
 Authors: Van-Thuy Phi and Taishi Ikeda.
@@ -7,7 +7,7 @@ Supervisor: Kevin Duh.
 
 - Two types of distances: Cosine distance / Euclidean distance.
 - Totally 8 different models for English and Japanese data.
-- To run simple HTTP server: "python -m SimpleHTTPServer 8888".
+- To run simple HTTP server: "python -m http.server 8888".
 <br>
 
 
@@ -41,6 +41,11 @@ Supervisor: Kevin Duh.
 - Visualize your own data
 	+ To convert the word2vec models to the JSON files, the Gensim library (https://radimrehurek.com/gensim/install.html) is required.
 	Quick install Gensim: "easy_install -U gensim" or, alternatively: "pip install --upgrade gensim".
+	+ Pre-process and tokenize your corpus, ensuring you exclude Special characters detailed in "Remove_Special_Characters.txt"
+    + Special characters should be excluded from JSON files to generate the correct JSON format.
+	+ Generate your Word2Vec Model using "model = gensim.models.Word2Vec(tokenized_sentences, size=200)"
+	+ Save your Word2Vec Model using "model.wv.save_word2vec_format('model_name.bin',binary=True)"
 	+ For the Cosine distance metric: use the script "create_database_cosine.py".
-	+ For the Euclidean distance metric: use the script "create_database_euclidean.py", and copy the file "word2vec.py" to Gensim library's location, e.g., "/Library/Python/2.7/site-packages/gensim-0.10.3-py2.7-macosx-10.10-intel.egg/gensim/models". In this new implementation, the new method most_similar_euclidean() is included to calculate the distance between pairs of words/phrases by the Euclidean metric.
-	+ Special characters should be excluded from JSON files to generate the correct JSON format. More details are in "Remove_Special_Characters.txt" file.
+	+ For the Euclidean distance metric: use the script "create_database_euclidean.py", and copy the file "keyedvectors.py" to Gensim library's location, e.g., "/Library/Python/3.5/site-packages/gensim/models". In this new implementation, the new method most_similar_euclidean() is included to calculate the distance between pairs of words/phrases by the Euclidean metric.
+	+ Edit each script directing "model_path" to your saved model.
+	+ Place the generated json output into the "frontend/data" dir, replacing and removing all other data if you wish to work exclusively with your own model.
