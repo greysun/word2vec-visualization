@@ -11,7 +11,7 @@ model = KeyedVectors.load_word2vec_format(model_path, binary=True)  # C binary f
 print("Loading model: Done")
 
 #Name of output file
-f = open('en_data_cosine_skipgram_original.json','w')
+f = open('en_data_cosine_skipgram.json','w')
 
 f.write("{\n")
 
