@@ -46,6 +46,6 @@ Supervisor: Kevin Duh.
 	+ Generate your Word2Vec Model using `model = gensim.models.Word2Vec(tokenized_sentences, size=200)`
 	+ Save your Word2Vec Model using `model.wv.save_word2vec_format('model_name.bin',binary=True)`
 	+ For the Cosine distance metric: use the script `create_database_cosine.py`.
-	+ For the Euclidean distance metric: use the script `create_database_euclidean.py`, and copy the file `keyedvectors.py` to Gensim library's location, e.g., `/Library/Python/3.5/site-packages/gensim/models`. In this new implementation, the new method most_similar_euclidean() is included to calculate the distance between pairs of words/phrases by the Euclidean metric.
+	+ For the Euclidean distance metric: use the script `create_database_euclidean.py`, and copy the file `keyedvectors.py` to Gensim library's location, e.g., `/Library/Python/3.5/site-packages/gensim/models`. In this new implementation, the new method `most_similar_euclidean()` is included to calculate the distance between pairs of words/phrases by the Euclidean metric.
 	+ Edit each script directing "model_path" to your saved model.
 	+ Place the generated json output into the `frontend/data` dir, replacing and removing all other data if you wish to work exclusively with your own model.
