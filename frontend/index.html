@@ -17,32 +17,31 @@
 
     <link rel="shortcut icon" href="images/favicon.ico">
 
+    <style>
+
+        .node {
+            cursor: pointer;
+        }
+
+        .node circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 1.5px;
+        }
+
+        .node text {
+            font: 10px sans-serif;
+        }
+
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 1.5px;
+        }
+
+    </style>
 </head>
 
-
-<style>
-
-    .node {
-        cursor: pointer;
-    }
-
-    .node circle {
-        fill: #fff;
-        stroke: steelblue;
-        stroke-width: 1.5px;
-    }
-
-    .node text {
-        font: 10px sans-serif;
-    }
-
-    .link {
-        fill: none;
-        stroke: #ccc;
-        stroke-width: 1.5px;
-    }
-
-</style>
 <body>
 <br>
 <h3 align="center">Word Vectors Visualization</h3>
@@ -104,9 +103,6 @@
     </div>
 
 
-</div> <!-- /row -->
-
-
 </div> <!-- /container -->
 
 <div class="container" align="center">
@@ -130,9 +126,6 @@
             <input type="radio" name="language" value="Japanese"> Japanese
         </form>
     </div>
-
-
-</div> <!-- /row -->
 
 
 </div> <!-- /container -->
@@ -489,8 +482,10 @@
                     <br>Models are trained on HiraganaTimes data.
                 </p>
 
-            </div> <!-- /col-md-7 -->
+            </div> <!-- /col-md-12 -->
 
 
         </div>
+    </div>
 </footer>
+</body>
