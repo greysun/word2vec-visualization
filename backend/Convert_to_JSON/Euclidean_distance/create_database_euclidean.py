@@ -10,34 +10,31 @@ print("Loading model...")
 model = KeyedVectors.load_word2vec_format(model_path, binary=True)  # C binary format
 print("Loading model: Done")
 
-f = open('en_data_euclidean_skipgram.json', 'w')
+with open('en_data_euclidean_skipgram.json', 'w') as f:
+    f.write("{\n")
 
-f.write("{\n")
+    number_words = len(model.vocab)
+    # number_words = 10000
+    for i in range(0, number_words):
 
-number_words = len(model.vocab)
-# number_words = 10000
-for i in range(0, number_words):
+        stringA = list(model.vocab.items())[i][0]
+        f.write("\n\"" + stringA + "\":[\n")
 
-    stringA = list(model.vocab.items())[i][0]
-    f.write("\n\"" + stringA + "\":[\n")
+        nearest_words = model.most_similar_euclidean(positive=[stringA], negative=[], topn=20)
+        number_nearest_words = len(nearest_words)
 
-    nearest_words = model.most_similar_euclidean(positive=[stringA], negative=[], topn=20)
-    number_nearest_words = len(nearest_words)
+        for j in range(0, number_nearest_words):
+            f.write("{\"w\":\"" + nearest_words[j][0] + "\",\"d\":" + str(round(nearest_words[j][1], 3)) + "}")
+            if j != number_nearest_words - 1:
+                f.write(",\n")
+            else:
+                f.write("]")
 
-    for j in range(0, number_nearest_words):
-        f.write("{\"w\":\"" + nearest_words[j][0] + "\",\"d\":" + str(round(nearest_words[j][1], 3)) + "}")
-        if j != number_nearest_words - 1:
+        if i != number_words - 1:
             f.write(",\n")
         else:
-            f.write("]")
+            f.write("\n")
 
-    if i != number_words - 1:
-        f.write(",\n")
-    else:
-        f.write("\n")
-
-f.write("\n}\n")
-
-f.close()
+    f.write("\n}\n")
 
 print("Finished!")
