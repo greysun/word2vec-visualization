@@ -35,7 +35,7 @@ Supervisor: Kevin Duh.
 			all data for searching word and vizualizing them: `data_cosine.json` and `data_euclidean.json` are the databases. The flare-format data is created from the database when running the web page.
 		+ js<br>
 			D3.js library (visualization javascript library).
-		+ word2vec_tree_final.html<br>
+		+ index.html<br>
 			the main web page.
 
 - Visualize your own data
