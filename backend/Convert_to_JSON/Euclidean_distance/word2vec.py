@@ -164,6 +164,8 @@ except ImportError:
 
         return len([word for word in sentence if word is not None])
 
+__author__ = "Phi Van thuy"
+
 
 def train_sg_pair(model, word, word2, alpha, labels, train_w1=True, train_w2=True):
     l1 = model.syn0[word2.index]
