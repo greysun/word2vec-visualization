@@ -34,20 +34,20 @@ document.getElementById("submit").onclick = function () {
 function createFlare (word, topn, data) {
 
   /*flare = {
-"name": "student",
-"children": [
-{"name": "graduate"},
-{"name": "hosei"},
-{"name": "daigaku"},
-{"name": "college"},
-{"name": "rikkyo"},
-{"name": "graduated"},
-{"name": "doctorate"},
-{"name": "cambridge"},
-{"name": "sophia"},
-{"name": "doctoral"}
-]
-};*/
+    "name": "student",
+    "children": [
+      {"name": "graduate"},
+      {"name": "hosei"},
+      {"name": "daigaku"},
+      {"name": "college"},
+      {"name": "rikkyo"},
+      {"name": "graduated"},
+      {"name": "doctorate"},
+      {"name": "cambridge"},
+      {"name": "sophia"},
+      {"name": "doctoral"}
+    ]
+  };*/
 
   topn = topn;
 
