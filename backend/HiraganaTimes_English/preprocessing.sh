@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # This function will convert text to lowercase and remove special characters
 
 #normalize_text() {
