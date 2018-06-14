@@ -24,11 +24,12 @@ document.getElementById("submit").onclick = function () {
   var word = document.getElementById("word").value;
   var topn = document.getElementById("topn").value;
   //console.log(word);
-  if (word == "")
+  if (word == "") {
     alert("Please enter a word!");
-  else
+  }
+  else {
     visualize(word, topn);
-
+  }
 }
 
 function createFlare (word, topn, data) {
@@ -174,35 +175,45 @@ function visualize (word, topn) {
 
   if (document.getElementById("language").elements["language"].value == "English") {
     if (document.getElementById("metric").value == "Cosine") {
-      if (document.getElementById("model").value == "Skipgram")
+      if (document.getElementById("model").value == "Skipgram") {
         data_file = "data/en_data_cosine_skipgram.json";
-      else
+      }
+      else {
         data_file = "data/en_data_cosine_cbow.json";
+      }
     }
     else {
-      if (document.getElementById("model").value == "Skipgram")
+      if (document.getElementById("model").value == "Skipgram") {
         data_file = "data/en_data_euclidean_skipgram.json";
-      else
+      }
+      else {
         data_file = "data/en_data_euclidean_cbow.json";
+      }
     }
   }
   else {
     if (document.getElementById("metric").value == "Cosine") {
-      if (document.getElementById("model").value == "Skipgram")
+      if (document.getElementById("model").value == "Skipgram") {
         data_file = "data/ja_data_cosine_skipgram.json";
-      else
+      }
+      else {
         data_file = "data/ja_data_cosine_cbow.json";
+      }
     }
     else {
-      if (document.getElementById("model").value == "Skipgram")
+      if (document.getElementById("model").value == "Skipgram") {
         data_file = "data/ja_data_euclidean_skipgram.json";
-      else
+      }
+      else {
         data_file = "data/ja_data_euclidean_cbow.json";
+      }
     }
   }
 
   d3.json(data_file, function (error, json) {
-    if (error) throw error;
+    if (error) {
+      throw error;
+    }
 
     json_data = json;
 
@@ -325,7 +336,8 @@ function click (d) {
   if (d.children) {
     d._children = d.children;
     d.children = null;
-  } else {
+  }
+  else {
     d.children = d._children;
     d._children = null;
   }
