@@ -89,6 +89,7 @@ import numpy as np
 from numpy import argsort
 from scipy.spatial import distance
 
+__author__ = "Phi Van thuy"
 
 logger = logging.getLogger(__name__)
 
