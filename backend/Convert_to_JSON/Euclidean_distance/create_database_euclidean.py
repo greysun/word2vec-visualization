@@ -1,9 +1,11 @@
-# Author: Phi Van Thuy
 """
 Convert word2vec models to JSON database by Euclidean distance metric (instead of Cosine distance)
 """
 
+
 from gensim.models import KeyedVectors
+
+__author__ = "Phi Van Thuy"
 
 # Trained model
 model_path = "your/model/path/here.bin"
