@@ -1,4 +1,3 @@
-#Purpose: add most_similar_euclidean() method
 #Usage: Copy this file to: /Library/Python/2.7/site-packages/gensim-0.10.3-py2.7-macosx-10.10-intel.egg/gensim/models
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -6,8 +5,9 @@
 # Copyright (C) 2013 Radim Rehurek <me@radimrehurek.com>
 # Licensed under the GNU LGPL v2.1 - http://www.gnu.org/licenses/lgpl.html
 
-
 """
+Add most_similar_euclidean() method
+
 Deep learning via word2vec's "skip-gram and CBOW models", using either
 hierarchical softmax or negative sampling [1]_ [2]_.
 

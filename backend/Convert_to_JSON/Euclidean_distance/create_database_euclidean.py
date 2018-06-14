@@ -1,4 +1,7 @@
-# Purpose: Convert word2vec models to JSON database by Euclidean distance metric (instead of Cosine distance)
+"""
+Convert word2vec models to JSON database by Euclidean distance metric (instead of Cosine distance)
+"""
+
 
 from gensim.models import KeyedVectors
 
